@@ -1,17 +1,15 @@
-import 'dart:ui';
-
-import 'package:ecommerce_app_ui/modules/signup/controller/signup_controller.dart';
+import 'package:ecommerce_app_ui/modules/login/controller/login_controller.dart';
 import 'package:ecommerce_app_ui/widgets/button/button_social_widget.dart';
 import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(SignUpController());
+    final controller = Get.put(LoginController());
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
@@ -27,7 +25,7 @@ class SignUpPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const Text(
-              'Sign Up',
+              'Login',
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 28.0,
@@ -41,22 +39,7 @@ class SignUpPage extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(8.0),
               child: const TextField(
-                decoration: InputDecoration(
-                  labelText: 'Name',
-                  hintText: 'Mr.Muffin',
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 14.0),
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-            Container(
-              margin: const EdgeInsets.only(top: 16.0),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              padding: const EdgeInsets.all(8.0),
-              child: const TextField(
+                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   hintText: 'demo.email@example.com',
@@ -76,27 +59,22 @@ class SignUpPage extends StatelessWidget {
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  hintStyle: TextStyle(color: Colors.black, fontSize: 14.0),
                   border: InputBorder.none,
                 ),
               ),
             ),
-            GestureDetector(
-              onTap: () => controller.onSignUp(),
-              child: const Padding(
-                padding: EdgeInsets.only(top: 16.0, right: 24.0, bottom: 32.0),
-                child: Align(
-                    alignment: Alignment.centerRight,
-                    child: Text(
-                      'Already have an account?',
-                      style: TextStyle(color: Colors.black, fontSize: 16.0),
-                    )),
-              ),
+            const Padding(
+              padding: EdgeInsets.only(top: 16.0, right: 24.0, bottom: 32.0),
+              child: Align(
+                  alignment: Alignment.centerRight,
+                  child: Text(
+                    'Forgot your password?',
+                    style: TextStyle(color: Colors.black, fontSize: 16.0),
+                  )),
             ),
             CustomButtonWidget(
-              content: 'SIGN UP',
-              callback: () => controller.onSignUp(),
-            ),
+                content: 'LOGIN',
+                callback: () => controller.onLogin(),),
           ],
         ),
       ),
