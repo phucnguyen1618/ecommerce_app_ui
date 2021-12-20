@@ -9,5 +9,7 @@ abstract class Routes {
   static const PROFILE = '/profile';
   static const DETAIL = '/detail';
   static const CONTAINER = '/container';
+  static const FILTERS = '/filters';
+  static const BRAND = '/brand';
 
 }
