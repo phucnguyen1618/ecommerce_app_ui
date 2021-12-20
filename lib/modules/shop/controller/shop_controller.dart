@@ -41,6 +41,10 @@ class ShopController extends GetxController {
     Get.back(result: sortByList[index].content);
   }
 
+  onItemProductClicked() {
+    Get.toNamed(Routes.DETAIL);
+  }
+
   onBack(int index){
     pageController.jumpToPage(index);
   }

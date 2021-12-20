@@ -11,5 +11,4 @@ abstract class Routes {
   static const CONTAINER = '/container';
   static const FILTERS = '/filters';
   static const BRAND = '/brand';
-
 }
