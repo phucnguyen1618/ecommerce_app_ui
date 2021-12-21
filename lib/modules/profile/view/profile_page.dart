@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:ecommerce_app_ui/modules/profile/controller/profile_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

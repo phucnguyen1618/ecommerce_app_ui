@@ -1,10 +1,17 @@
+import 'dart:developer';
+
+import 'package:ecommerce_app_ui/modules/shop/controller/shop_controller.dart';
+import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import 'kids_categories_widget.dart';
-import 'men_categories_widget.dart';
-import 'women_categories_widget.dart';
+import '../../../widgets/kids_categories_widget.dart';
+import '../../../widgets/men_categories_widget.dart';
+import '../../../widgets/women_categories_widget.dart';
 
-class CategoriesPage extends StatelessWidget {
+part 'categories_page_children.dart';
+
+class CategoriesPage extends GetView<ShopController> {
   const CategoriesPage({Key? key}) : super(key: key);
 
   @override
@@ -56,10 +63,10 @@ class CategoriesPage extends StatelessWidget {
               Container(
                 color: const Color(0xFFE5E5E5),
                 height: MediaQuery.of(context).size.height,
-                child: const TabBarView(children: [
-                  WomenCategoriesWidget(),
-                  MenCategoriesWidget(),
-                  KidsCategoriesWidget(),
+                child: TabBarView(children: [
+                  buildWomenCategoryWidget(),
+                  const MenCategoriesWidget(),
+                  const KidsCategoriesWidget(),
                 ]),
               )
             ],

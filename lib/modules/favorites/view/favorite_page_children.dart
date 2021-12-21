@@ -1,60 +1,37 @@
-part of 'detail_category_page.dart';
+part of 'favorite_page.dart';
 
-extension DetailCategoryPageChildren on DetailCategoryPage {
+extension FavoritePageChildren on FavoritePage {
   PreferredSizeWidget buildCustomAppBar() {
-    ShopController controller = Get.find<ShopController>();
     return AppBar(
       backgroundColor: Colors.white,
+      actions: const [
+        Padding(
+          padding: EdgeInsets.only(right: 8.0),
+          child: Icon(
+            Icons.search,
+            color: Colors.black,
+          ),
+        ),
+      ],
       bottom: PreferredSize(
         preferredSize: const Size.fromHeight(130.0),
         child: Padding(
           padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 12.0),
           child: Column(
             children: [
-              SafeArea(
-                left: true,
-                right: true,
-                top: true,
-                bottom: false,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GestureDetector(
-                      onTap: () {
-                        controller.onBack(0);
-                      },
-                      child: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.black,
-                      ),
-                    ),
-                    const Icon(
-                      Icons.search,
-                      color: Colors.black,
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(
                 height: 24.0,
               ),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Women's tops",
+                  "Favorites",
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 25.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
-              Row(
-                children: const [
-                  WomenCategoryCard(content: 'T-shirt'),
-                  WomenCategoryCard(content: 'Crop tops'),
-                  WomenCategoryCard(content: 'Sleeveless'),
-                ],
               ),
               const SizedBox(
                 height: 8.0,
@@ -79,7 +56,7 @@ extension DetailCategoryPageChildren on DetailCategoryPage {
                           Text(
                             'Filters',
                             style:
-                                TextStyle(color: Colors.black, fontSize: 14.0),
+                            TextStyle(color: Colors.black, fontSize: 14.0),
                           ),
                         ],
                       ),
@@ -93,7 +70,7 @@ extension DetailCategoryPageChildren on DetailCategoryPage {
                             color: Colors.black,
                           ),
                           Obx(
-                            () => Text(
+                                () => Text(
                               controller.contentSortBy.value,
                               style: const TextStyle(
                                   color: Colors.black, fontSize: 14.0),
@@ -105,15 +82,15 @@ extension DetailCategoryPageChildren on DetailCategoryPage {
                     GestureDetector(
                       onTap: () => controller.onChangeLayout(),
                       child: Obx(
-                        () => controller.isChangeLayout.value
+                            () => controller.isChangeLayout.value
                             ? const Icon(
-                                Icons.list,
-                                color: Colors.black,
-                              )
+                          Icons.list,
+                          color: Colors.black,
+                        )
                             : const Icon(
-                                Icons.view_module,
-                                color: Colors.black,
-                              ),
+                          Icons.view_module,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ],

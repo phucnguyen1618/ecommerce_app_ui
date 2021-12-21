@@ -21,7 +21,6 @@ extension SettingsPageChildren on SettingsPage {
   }
 
   Widget buildColumnChangePassword() {
-    final controller = Get.put(SettingsController());
     return Column(
       children: [
         Row(

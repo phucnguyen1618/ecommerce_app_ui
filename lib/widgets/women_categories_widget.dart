@@ -1,8 +1,17 @@
-part of 'women_categories_widget.dart';
+import 'package:flutter/material.dart';
 
-extension WomenCategoryChildren on WomenCategoriesWidget {
+class WomenCategoriesWidget extends StatelessWidget {
+  const WomenCategoriesWidget({
+    Key? key,
+    required this.name,
+    required this.image,
+  }) : super(key: key);
 
-  Widget buildItemWomenCategoryWidget(String name, String image) {
+  final String name;
+  final String image;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),

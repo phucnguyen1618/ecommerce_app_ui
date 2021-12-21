@@ -1,6 +1,5 @@
 import 'dart:developer';
 
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_app_ui/data/database/local_database.dart';
 import 'package:ecommerce_app_ui/modules/detail/controller/detail_product_controller.dart';
 import 'package:ecommerce_app_ui/widgets/card/choose_size_and_color_widget.dart';
@@ -12,7 +11,7 @@ import 'package:get/get.dart';
 
 part 'detail_product_children.dart';
 
-class DetailProductPage extends StatelessWidget {
+class DetailProductPage extends GetView<DetailProductController> {
   const DetailProductPage({Key? key}) : super(key: key);
 
   @override

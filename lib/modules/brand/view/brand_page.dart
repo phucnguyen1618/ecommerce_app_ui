@@ -9,12 +9,11 @@ import 'package:get/get.dart';
 
 part 'brand_page_children.dart';
 
-class BrandPage extends StatelessWidget {
+class BrandPage extends GetView<BrandController> {
   const BrandPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(BrandController());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

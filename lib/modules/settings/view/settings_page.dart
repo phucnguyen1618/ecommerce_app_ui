@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 
 part 'settings_page_children.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends GetView<SettingsController> {
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -28,26 +28,28 @@ class SettingsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 32.0,),
-            const Text(
-              'Personal information',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 16.0,
-                fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 32.0,),
+              const Text(
+                'Personal information',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            buildColumnPersonalInfor('Full name'),
-            buildColumnPersonalInfor('Date of Birth'),
-            const SizedBox(height: 32.0,),
-            buildColumnChangePassword(),
-            buildColumnNotification(),
-          ],
+              buildColumnPersonalInfor('Full name'),
+              buildColumnPersonalInfor('Date of Birth'),
+              const SizedBox(height: 32.0,),
+              buildColumnChangePassword(),
+              buildColumnNotification(),
+            ],
+          ),
         ),
       ),
     );

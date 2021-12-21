@@ -10,4 +10,8 @@ class DetailProductController extends GetxController {
     isSizeProductClicked.value = !isSizeProductClicked.value;
     Get.bottomSheet(const BottomSheetChooseSizeProduct());
   }
+
+  onBack() {
+    Get.back();
+  }
 }

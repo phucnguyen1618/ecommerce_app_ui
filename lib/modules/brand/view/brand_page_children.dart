@@ -27,7 +27,6 @@ extension BrandPageChildren on BrandPage {
   }
 
   Widget buildListBrand(List<Brand> dataList) {
-    BrandController controller = Get.find<BrandController>();
     return Obx(
       () => Expanded(
         child: ListView.builder(

@@ -1,36 +1,26 @@
-import 'dart:developer';
+part of 'categories_page.dart';
 
-import 'package:ecommerce_app_ui/modules/shop/controller/shop_controller.dart';
-import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+extension CategoriesPageChildren on CategoriesPage {
 
-part 'women_category_children.dart';
-
-class WomenCategoriesWidget extends StatelessWidget {
-  const WomenCategoriesWidget({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    ShopController controller = Get.find<ShopController>();
+  Widget buildWomenCategoryWidget() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        buildItemWomenCategoryWidget(
-          'New',
-          'assets/images/image_01.jpg',
+        const WomenCategoriesWidget(
+          name: 'New',
+          image: 'assets/images/image_01.jpg',
         ),
-        buildItemWomenCategoryWidget(
-          'Clothes',
-          'assets/images/image_02.jpg',
+        const WomenCategoriesWidget(
+          name: 'Clothes',
+          image: 'assets/images/image_02.jpg',
         ),
-        buildItemWomenCategoryWidget(
-          'Shoes',
-          'assets/images/image_03.jpeg',
+        const WomenCategoriesWidget(
+          name: 'Shoes',
+          image: 'assets/images/image_03.jpeg',
         ),
-        buildItemWomenCategoryWidget(
-          'Accessories',
-          'assets/images/image_04.jpeg',
+        const WomenCategoriesWidget(
+          name: 'Accessories',
+          image: 'assets/images/image_04.jpeg',
         ),
         Padding(
           padding: const EdgeInsets.all(16.0),

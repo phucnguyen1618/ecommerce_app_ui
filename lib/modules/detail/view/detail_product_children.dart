@@ -9,9 +9,12 @@ extension DetailProductChildren on DetailProductPage {
         'Short dress',
         style: TextStyle(color: Colors.black, fontSize: 16.0),
       ),
-      leading: const Icon(
-        Icons.arrow_back_ios,
-        color: Colors.black,
+      leading: GestureDetector(
+        onTap: () => controller.onBack(),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
+        ),
       ),
       actions: const [
         Padding(
@@ -26,7 +29,6 @@ extension DetailProductChildren on DetailProductPage {
   }
 
   Widget buildBodyInformationProduct() {
-    final controller = Get.put(DetailProductController());
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
@@ -170,24 +172,10 @@ extension DetailProductChildren on DetailProductPage {
   }
 
   Widget buildImageSlider(List<String> imageList) {
-    return SizedBox(
-      width: double.infinity,
-      height: 450.0,
-      child: CarouselSlider(
-        options: CarouselOptions(
-          height: 230.0,
-          aspectRatio: 16 / 9,
-          viewportFraction: 0.8,
-        ),
-        items: imageList
-            .map(
-              (item) => Image.asset(
-                item,
-                fit: BoxFit.fill,
-              ),
-            )
-            .toList(),
-      ),
+    return Container(
+      margin: const EdgeInsets.all(8.0),
+      height: 220.0,
+      child: Image.asset('assets/images/image_01.jpg'),
     );
   }
 }
