@@ -2,7 +2,7 @@ import 'package:ecommerce_app_ui/modules/bag/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/container/controller/container_controller.dart';
 import 'package:ecommerce_app_ui/modules/favorites/favorite_page.dart';
 import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
-import 'package:ecommerce_app_ui/modules/profile/profile_page.dart';
+import 'package:ecommerce_app_ui/modules/profile/view/profile_page.dart';
 import 'package:ecommerce_app_ui/modules/shop/view/shop_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

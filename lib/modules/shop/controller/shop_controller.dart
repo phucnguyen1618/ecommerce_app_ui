@@ -1,6 +1,6 @@
 import 'dart:developer';
 
-import 'package:ecommerce_app_ui/data/models/sortby.dart';
+import 'package:ecommerce_app_ui/data/database/local_database.dart';
 import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:ecommerce_app_ui/widgets/bottomsheet/bottomsheet_sort_by.dart';
 import 'package:flutter/cupertino.dart';
@@ -10,15 +10,10 @@ class ShopController extends GetxController {
   var pageController = PageController(initialPage: 0);
   var text = ''.obs;
   var isSelected = false.obs;
-  final sortByList = [
-    SortBy('Popular', false),
-    SortBy("Newest", false),
-    SortBy('Custom review', false),
-    SortBy('Price: lowest to high', true),
-    SortBy('Price: highest to low', false),
-  ].obs;
+  final sortByList = LocalDatabase.sortByList.obs;
   var contentSortBy = 'Price: lowest to high'.obs;
   var isChangeLayout = false.obs;
+  var categoryList = LocalDatabase.categoryList;
 
   onItemCategoryClicked(String content) async {
     pageController.jumpToPage(1);

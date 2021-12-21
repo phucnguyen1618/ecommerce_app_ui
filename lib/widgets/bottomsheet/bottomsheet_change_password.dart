@@ -1,9 +1,8 @@
-import 'package:ecommerce_app_ui/widgets/button/button_choose_size_product_widget.dart';
 import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
 import 'package:flutter/material.dart';
 
-class BottomSheetChooseSizeProduct extends StatelessWidget {
-  const BottomSheetChooseSizeProduct({Key? key}) : super(key: key);
+class BottomSheetChangePassword extends StatelessWidget {
+  const BottomSheetChangePassword({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class BottomSheetChooseSizeProduct extends StatelessWidget {
             ),
           ),
           const Text(
-            'Select size',
+            'Password Change',
             style: TextStyle(
               color: Colors.black,
               fontSize: 18.0,
@@ -38,23 +37,9 @@ class BottomSheetChooseSizeProduct extends StatelessWidget {
           const SizedBox(
             height: 12.0,
           ),
-          Container(
-            padding: const EdgeInsets.all(16.0),
-            color: Colors.white,
-            child: Wrap(
-              direction: Axis.horizontal,
-              children: const [
-                ButtonChooseSizeProductWidget(content: 'XS'),
-                ButtonChooseSizeProductWidget(content: 'S'),
-                ButtonChooseSizeProductWidget(content: 'M'),
-                ButtonChooseSizeProductWidget(content: 'L'),
-                ButtonChooseSizeProductWidget(content: 'XL'),
-              ],
-            ),
-          ),
           Padding(
             padding: const EdgeInsets.all(16.0),
-            child: CustomButtonWidget(content: 'ADD TO CART', callback: () {}),
+            child: CustomButtonWidget(content: 'SAVE PASSWORD', callback: () {}),
           ),
         ],
       ),

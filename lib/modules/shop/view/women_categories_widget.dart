@@ -54,15 +54,19 @@ class WomenCategoriesWidget extends StatelessWidget {
         Expanded(
           child: ListView.builder(
               shrinkWrap: true,
-              itemCount: 11,
+              itemCount: controller.categoryList.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: const Text(
-                    'Item category',
-                    style: TextStyle(
+                  contentPadding: const EdgeInsets.only(left: 30.0, right: 16.0),
+                  title: Text(
+                    controller.categoryList[index].toString(),
+                    style: const TextStyle(
                       color: Colors.black,
                       fontSize: 14.0,
                     ),
+                  ),
+                  subtitle: const Divider(
+                    color: Colors.grey,
                   ),
                   onTap: () {
                     controller.onItemCategoryClicked('Phuc Nguyen');

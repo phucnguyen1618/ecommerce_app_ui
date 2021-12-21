@@ -21,7 +21,7 @@ class ItemGridWomenCategoryWidget extends StatelessWidget {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width / 2,
                 child: Image.asset(
-                  'assets/images/image_01.jpg',
+                  'assets/images/image_02.jpg',
                   fit: BoxFit.cover,
                   height: 200.0,
                 ),

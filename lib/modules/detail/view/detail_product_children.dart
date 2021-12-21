@@ -35,17 +35,19 @@ extension DetailProductChildren on DetailProductPage {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ChooseSizeAndColorWidget(
-                content: 'Size',
-                isChoose: true,
-                callback: () => controller.onChooseSizeProductClicked(),
+              Obx(
+                () => ChooseSizeAndColorWidget(
+                  content: 'Size',
+                  isChoose: controller.isSizeProductClicked.value,
+                  callback: () => controller.onChooseSizeProductClicked(),
+                ),
               ),
-              ChooseSizeAndColorWidget(
-                content: 'Black',
-                isChoose: false,
-                callback: () {
-                  log('Clicked Choose Color Product');
-                },
+              Obx(
+                () => ChooseSizeAndColorWidget(
+                  content: 'Black',
+                  callback: () => controller.onChooseSizeProductClicked(),
+                  isChoose: controller.isColorProductClicked.value,
+                ),
               ),
               const Icon(
                 Icons.favorite_border,
@@ -84,7 +86,7 @@ extension DetailProductChildren on DetailProductPage {
           const RatingBarWidget(),
           const Text(
             'Short dress in soft cotton jersey with decorative buttons down the front and a wide, frill-trimmed square neckline with concealed elastication. Elasticated seam under the bust and short puff sleeves with a small frill trim.',
-            style: TextStyle(color: Colors.black, fontSize: 14.0),
+            style: TextStyle(color: Colors.black, fontSize: 16.0),
           ),
           const Divider(
             color: Colors.grey,
@@ -152,7 +154,7 @@ extension DetailProductChildren on DetailProductPage {
             ],
           ),
           SizedBox(
-            height: 300.0,
+            height: 330.0,
             child: ListView.builder(
               itemCount: 10,
               scrollDirection: Axis.horizontal,
@@ -167,10 +169,25 @@ extension DetailProductChildren on DetailProductPage {
     );
   }
 
-  Widget buildRowChooseSizeAndColor() {
-    return Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [],
+  Widget buildImageSlider(List<String> imageList) {
+    return SizedBox(
+      width: double.infinity,
+      height: 450.0,
+      child: CarouselSlider(
+        options: CarouselOptions(
+          height: 230.0,
+          aspectRatio: 16 / 9,
+          viewportFraction: 0.8,
+        ),
+        items: imageList
+            .map(
+              (item) => Image.asset(
+                item,
+                fit: BoxFit.fill,
+              ),
+            )
+            .toList(),
+      ),
     );
   }
 }

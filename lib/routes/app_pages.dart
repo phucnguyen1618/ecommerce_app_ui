@@ -5,6 +5,7 @@ import 'package:ecommerce_app_ui/modules/filters/filters_page.dart';
 import 'package:ecommerce_app_ui/modules/forgotpassword/view/forgot_password_page.dart';
 import 'package:ecommerce_app_ui/modules/login/view/login_page.dart';
 import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
+import 'package:ecommerce_app_ui/modules/settings/view/settings_page.dart';
 import 'package:ecommerce_app_ui/modules/signup/view/signup_page.dart';
 import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:get/get.dart';
@@ -22,5 +23,5 @@ final routePages = [
   GetPage(name: Routes.FILTERS, page: () => const FiltersPage()),
   GetPage(name: Routes.BRAND, page: () => const BrandPage()),
   GetPage(name: Routes.DETAIL, page: () => const DetailProductPage()),
-
+  GetPage(name: Routes.SETTINGS, page: () => const SettingsPage()),
 ];

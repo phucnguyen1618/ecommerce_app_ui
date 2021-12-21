@@ -1,5 +1,7 @@
 import 'dart:developer';
 
+import 'package:carousel_slider/carousel_slider.dart';
+import 'package:ecommerce_app_ui/data/database/local_database.dart';
 import 'package:ecommerce_app_ui/modules/detail/controller/detail_product_controller.dart';
 import 'package:ecommerce_app_ui/widgets/card/choose_size_and_color_widget.dart';
 import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
@@ -21,13 +23,7 @@ class DetailProductPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Image.asset(
-                'assets/images/image_03.jpeg',
-                fit: BoxFit.cover,
-              ),
-            ),
+            buildImageSlider(LocalDatabase.imageList),
             buildBodyInformationProduct(),
           ],
         ),

@@ -103,7 +103,9 @@ extension FiltersPageChildren on FiltersPage {
               CustomColorWidget(
                 color: Color(0xFF020202),
               ),
-              CustomColorWidget(color: Colors.white),
+              CustomColorWidget(
+                color: Color(0xFFF9F9F9),
+              ),
               CustomColorWidget(
                 color: Color(0xFFB82222),
               ),
