@@ -19,9 +19,6 @@ extension FavoritePageChildren on FavoritePage {
           padding: const EdgeInsets.only(left: 16.0, right: 16.0, bottom: 12.0),
           child: Column(
             children: [
-              const SizedBox(
-                height: 24.0,
-              ),
               const Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
@@ -35,6 +32,15 @@ extension FavoritePageChildren on FavoritePage {
               ),
               const SizedBox(
                 height: 8.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: const [
+                  WomenCategoryCard(content: 'Summer'),
+                  WomenCategoryCard(content: 'T-shirts'),
+                  WomenCategoryCard(content: 'Shirts'),
+                ],
               ),
               Container(
                 color: const Color(0xFFF9F9F9),
@@ -102,4 +108,6 @@ extension FavoritePageChildren on FavoritePage {
       ),
     );
   }
+
+
 }
