@@ -1,3 +1,4 @@
+import 'package:ecommerce_app_ui/modules/bag/binding/bag_binding.dart';
 import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/brand/binding/brand_binding.dart';
 import 'package:ecommerce_app_ui/modules/brand/view/brand_page.dart';
@@ -9,6 +10,7 @@ import 'package:ecommerce_app_ui/modules/favorites/binding/favorite_binding.dart
 import 'package:ecommerce_app_ui/modules/favorites/view/favorite_page.dart';
 import 'package:ecommerce_app_ui/modules/filters/view/filters_page.dart';
 import 'package:ecommerce_app_ui/modules/forgotpassword/view/forgot_password_page.dart';
+import 'package:ecommerce_app_ui/modules/home/binding/home_binding.dart';
 import 'package:ecommerce_app_ui/modules/login/view/login_page.dart';
 import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
 import 'package:ecommerce_app_ui/modules/profile/view/profile_page.dart';
@@ -23,12 +25,17 @@ import 'package:get/get.dart';
 final routePages = [
   GetPage(name: Routes.SIGNUP, page: () => const SignUpPage()),
   GetPage(name: Routes.LOGIN, page: () => const LoginPage()),
+  GetPage(name: Routes.FORGOTPASSWORD, page: () => const ForgotPasswordPage()),
   GetPage(
-    name: Routes.FORGOTPASSWORD,
-    page: () => const ForgotPasswordPage(),
+    name: Routes.HOME,
+    page: () => const HomePage(),
+    binding: HomeBinding(),
   ),
-  GetPage(name: Routes.HOME, page: () => const HomePage()),
-  GetPage(name: Routes.BAG, page: () => const BagPage()),
+  GetPage(
+    name: Routes.BAG,
+    page: () => const BagPage(),
+    binding: BagBinding(),
+  ),
   GetPage(
     name: Routes.FAVORITES,
     page: () => const FavoritePage(),
@@ -42,6 +49,8 @@ final routePages = [
       ContainerBinding(),
       ShopBinding(),
       FavoriteBinding(),
+      BagBinding(),
+      HomeBinding(),
     ],
   ),
   GetPage(name: Routes.FILTERS, page: () => const FiltersPage()),

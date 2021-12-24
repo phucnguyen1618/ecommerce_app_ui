@@ -1,3 +1,4 @@
+import 'package:ecommerce_app_ui/widgets/custom/custom_row_choose_quantily.dart';
 import 'package:flutter/material.dart';
 
 class ItemBagCard extends StatelessWidget {
@@ -90,14 +91,12 @@ class ItemBagCard extends StatelessWidget {
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Container(
-                      width: 100.0,
-                      height: 40.0,
-                      color: Colors.blue,
+                  children: const [
+                    CustomRowChooseQuantily(),
+                    SizedBox(
+                      width: 48.0,
                     ),
-                    const SizedBox(width: 48.0,),
-                    const Align(
+                    Align(
                       alignment: Alignment.centerRight,
                       child: Text(
                         "32.000",

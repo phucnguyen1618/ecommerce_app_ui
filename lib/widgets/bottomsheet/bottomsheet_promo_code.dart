@@ -1,5 +1,5 @@
-import 'package:ecommerce_app_ui/widgets/button/custom_button_widget.dart';
 import 'package:ecommerce_app_ui/widgets/input/text_input_promocode.dart';
+import 'package:ecommerce_app_ui/widgets/item/item_promocode_widget.dart';
 import 'package:flutter/material.dart';
 
 class BottomSheetPromocode extends StatelessWidget {
@@ -16,7 +16,7 @@ class BottomSheetPromocode extends StatelessWidget {
           topRight: Radius.circular(24.0),
         ),
       ),
-      height: 550.0,
+      height: 450.0,
       child: Column(
         children: [
           Container(
@@ -29,16 +29,31 @@ class BottomSheetPromocode extends StatelessWidget {
             ),
           ),
           const TextInputPromocode(),
-          const Text(
-            'Your Promo Codes',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18.0,
-              fontWeight: FontWeight.bold,
+          const SizedBox(
+            height: 32.0,
+          ),
+          const Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'Your Promo Codes',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
           const SizedBox(
             height: 12.0,
+          ),
+          Expanded(
+            child: ListView.builder(
+              shrinkWrap: true,
+              itemCount: 5,
+              itemBuilder: (context, index) {
+                return const ItemPromocodeWidget();
+              },
+            ),
           ),
         ],
       ),
