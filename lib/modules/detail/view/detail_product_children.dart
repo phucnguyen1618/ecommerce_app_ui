@@ -156,7 +156,7 @@ extension DetailProductChildren on DetailProductPage {
             ],
           ),
           SizedBox(
-            height: 330.0,
+            height: 340.0,
             child: ListView.builder(
               itemCount: 10,
               scrollDirection: Axis.horizontal,
