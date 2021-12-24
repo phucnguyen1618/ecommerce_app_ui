@@ -1,4 +1,4 @@
-import 'package:ecommerce_app_ui/modules/bag/bag_page.dart';
+import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/brand/binding/brand_binding.dart';
 import 'package:ecommerce_app_ui/modules/brand/view/brand_page.dart';
 import 'package:ecommerce_app_ui/modules/container/binding/container_binding.dart';
@@ -23,7 +23,10 @@ import 'package:get/get.dart';
 final routePages = [
   GetPage(name: Routes.SIGNUP, page: () => const SignUpPage()),
   GetPage(name: Routes.LOGIN, page: () => const LoginPage()),
-  GetPage(name: Routes.FORGOTPASSWORD, page: () => const ForgotPasswordPage()),
+  GetPage(
+    name: Routes.FORGOTPASSWORD,
+    page: () => const ForgotPasswordPage(),
+  ),
   GetPage(name: Routes.HOME, page: () => const HomePage()),
   GetPage(name: Routes.BAG, page: () => const BagPage()),
   GetPage(

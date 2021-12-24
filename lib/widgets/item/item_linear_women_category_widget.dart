@@ -15,14 +15,14 @@ class ItemLinearWomenCategoryWidget extends StatelessWidget {
         margin: const EdgeInsets.all(16.0),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(16.0),
+          borderRadius: BorderRadius.circular(8.0),
         ),
         child: Row(
           children: [
             ClipRRect(
               borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(16.0),
-                bottomLeft: Radius.circular(16.0),
+                topLeft: Radius.circular(8.0),
+                bottomLeft: Radius.circular(8.0),
               ),
               child: Image.asset(
                 'assets/images/image_01.jpg',
