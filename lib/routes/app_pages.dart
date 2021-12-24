@@ -13,6 +13,7 @@ import 'package:ecommerce_app_ui/modules/forgotpassword/view/forgot_password_pag
 import 'package:ecommerce_app_ui/modules/home/binding/home_binding.dart';
 import 'package:ecommerce_app_ui/modules/login/view/login_page.dart';
 import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
+import 'package:ecommerce_app_ui/modules/order/view/my_order_page.dart';
 import 'package:ecommerce_app_ui/modules/profile/view/profile_page.dart';
 import 'package:ecommerce_app_ui/modules/settings/binding/settings_binding.dart';
 import 'package:ecommerce_app_ui/modules/settings/view/settings_page.dart';
@@ -74,4 +75,5 @@ final routePages = [
     page: () => const SettingsPage(),
     binding: SettingsBinding(),
   ),
+  GetPage(name: Routes.MY_ORDER, page: () => const MyOrderPage()),
 ];

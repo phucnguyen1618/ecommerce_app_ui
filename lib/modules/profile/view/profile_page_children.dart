@@ -46,8 +46,8 @@ extension ProfilePageChildren on ProfilePage {
       padding: const EdgeInsets.only(top: 32.0),
       child: Column(
         children: [
-          const ListTile(
-            title: Text(
+          ListTile(
+            title: const Text(
               'My orders',
               style: TextStyle(
                 color: Colors.black,
@@ -55,14 +55,18 @@ extension ProfilePageChildren on ProfilePage {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               'Already have 12 orders',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
+            onTap: () => controller.onMoveToMyOrderPage(),
           ),
           const ListTile(
             title: Text(
@@ -80,7 +84,10 @@ extension ProfilePageChildren on ProfilePage {
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
           ),
           const ListTile(
             title: Text(
@@ -98,7 +105,10 @@ extension ProfilePageChildren on ProfilePage {
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
           ),
           const ListTile(
             title: Text(
@@ -116,7 +126,10 @@ extension ProfilePageChildren on ProfilePage {
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
           ),
           const ListTile(
             title: Text(
@@ -134,7 +147,10 @@ extension ProfilePageChildren on ProfilePage {
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
           ),
           ListTile(
             title: const Text(
@@ -152,7 +168,10 @@ extension ProfilePageChildren on ProfilePage {
                 fontSize: 14.0,
               ),
             ),
-            trailing: const Icon(Icons.arrow_forward_ios, color: Color(0xFF9B9B9B),),
+            trailing: const Icon(
+              Icons.arrow_forward_ios,
+              color: Color(0xFF9B9B9B),
+            ),
             onTap: () => controller.onSettingsClicked(),
           ),
         ],

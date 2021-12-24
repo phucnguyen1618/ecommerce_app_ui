@@ -12,4 +12,5 @@ abstract class Routes {
   static const FILTERS = '/filters';
   static const BRAND = '/brand';
   static const SETTINGS = '/settings';
+  static const MY_ORDER = '/my_order';
 }

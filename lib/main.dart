@@ -1,9 +1,13 @@
+import 'package:ecommerce_app_ui/locator.dart';
+import 'package:ecommerce_app_ui/navigation_service.dart';
 import 'package:ecommerce_app_ui/routes/app_pages.dart';
 import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  setUpLocator();
   runApp(const MyApp());
 }
 
@@ -20,6 +24,7 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: Routes.SIGNUP,
       getPages: routePages,
+      navigatorKey: locator<NavigationService>().navigationKey,
     );
   }
 }
