@@ -1,14 +1,25 @@
-import 'package:flutter/material.dart';
+import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:get/get.dart';
 
 class ContainerController extends GetxController {
 
-  var isItemClicked = 0.obs;
-
-  var pageController = PageController(initialPage:  0);
-
-  onItemMenuClicked(int index) {
-    isItemClicked.value = index;
-    pageController.jumpToPage(index);
+  onMoveToPage(int index){
+    switch(index){
+      case 0:
+        Get.toNamed(Routes.HOME);
+        break;
+      case 1:
+        Get.toNamed(Routes.SHOP);
+        break;
+      case 2:
+        Get.toNamed(Routes.BAG);
+        break;
+      case 3:
+        Get.toNamed(Routes.FAVORITES);
+        break;
+      case 4:
+        Get.toNamed(Routes.PROFILE);
+        break;
+    }
   }
 }

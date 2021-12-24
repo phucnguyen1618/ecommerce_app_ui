@@ -1,5 +1,4 @@
-import 'dart:ui';
-
+import 'package:ecommerce_app_ui/modules/container/view/container_page.dart';
 import 'package:ecommerce_app_ui/modules/home/controller/home_controller.dart';
 import 'package:ecommerce_app_ui/widgets/item/item_new_product_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,13 +12,16 @@ class HomePage extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            headerHomePage(size),
-            buildListNewProduct(),
-          ],
+    return ContainerPage(
+      selectIndex: 0,
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              headerHomePage(size),
+              buildListNewProduct(),
+            ],
+          ),
         ),
       ),
     );

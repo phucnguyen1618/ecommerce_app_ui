@@ -1,33 +1,22 @@
-import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/container/controller/container_controller.dart';
-import 'package:ecommerce_app_ui/modules/favorites/view/favorite_page.dart';
-import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
-import 'package:ecommerce_app_ui/modules/profile/view/profile_page.dart';
-import 'package:ecommerce_app_ui/modules/shop/view/shop_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ContainerPage extends StatelessWidget {
-  const ContainerPage({Key? key}) : super(key: key);
+  final int selectIndex;
+  final Widget child;
+  const ContainerPage({Key? key, required this.selectIndex, required this.child}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(ContainerController());
     return Scaffold(
         backgroundColor: Colors.white,
-        body: PageView(
-          controller: controller.pageController,
-          physics: const NeverScrollableScrollPhysics(),
-          children: const [
-            HomePage(),
-            ShopPage(),
-            BagPage(),
-            FavoritePage(),
-            ProfilePage(),
-          ],
-        ),
-        bottomNavigationBar: Obx(
-          () => BottomNavigationBar(
+        body: child,
+        bottomNavigationBar:  BottomNavigationBar(
+            onTap:(index){
+              controller.onMoveToPage(index);
+            },
             elevation: 0.0,
             backgroundColor: Colors.white,
             showSelectedLabels: true,
@@ -81,11 +70,8 @@ class ContainerPage extends StatelessWidget {
               ),
             ],
             type: BottomNavigationBarType.fixed,
-            currentIndex: controller.isItemClicked.value,
-            onTap: (currentIndex) {
-              controller.onItemMenuClicked(currentIndex);
-            },
+            currentIndex:selectIndex
           ),
-        ));
+        );
   }
 }

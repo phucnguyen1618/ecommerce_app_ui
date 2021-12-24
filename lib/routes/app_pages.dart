@@ -2,8 +2,6 @@ import 'package:ecommerce_app_ui/modules/bag/binding/bag_binding.dart';
 import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/brand/binding/brand_binding.dart';
 import 'package:ecommerce_app_ui/modules/brand/view/brand_page.dart';
-import 'package:ecommerce_app_ui/modules/container/binding/container_binding.dart';
-import 'package:ecommerce_app_ui/modules/container/view/container_page.dart';
 import 'package:ecommerce_app_ui/modules/detail/binding/detail_binding.dart';
 import 'package:ecommerce_app_ui/modules/detail/view/detail_product_page.dart';
 import 'package:ecommerce_app_ui/modules/favorites/binding/favorite_binding.dart';
@@ -30,7 +28,10 @@ final routePages = [
   GetPage(
     name: Routes.HOME,
     page: () => const HomePage(),
-    binding: HomeBinding(),
+    bindings: [
+      HomeBinding(),
+      ShopBinding(),
+    ]
   ),
   GetPage(
     name: Routes.BAG,
@@ -43,17 +44,7 @@ final routePages = [
     binding: FavoriteBinding(),
   ),
   GetPage(name: Routes.PROFILE, page: () => const ProfilePage()),
-  GetPage(
-    name: Routes.CONTAINER,
-    page: () => const ContainerPage(),
-    bindings: [
-      ContainerBinding(),
-      ShopBinding(),
-      FavoriteBinding(),
-      BagBinding(),
-      HomeBinding(),
-    ],
-  ),
+
   GetPage(name: Routes.FILTERS, page: () => const FiltersPage()),
   GetPage(
     name: Routes.BRAND,
