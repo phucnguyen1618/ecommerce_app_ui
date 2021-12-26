@@ -16,12 +16,15 @@ extension DetailProductChildren on DetailProductPage {
           color: Colors.black,
         ),
       ),
-      actions: const [
-        Padding(
-          padding: EdgeInsets.only(right: 8.0),
-          child: Icon(
-            Icons.share,
-            color: Colors.black,
+      actions: [
+        GestureDetector(
+          onTap: () => controller.onMoveToRatingReviewPage(),
+          child: const Padding(
+            padding: EdgeInsets.only(right: 8.0),
+            child: Icon(
+              Icons.share,
+              color: Colors.black,
+            ),
           ),
         ),
       ],
@@ -174,7 +177,8 @@ extension DetailProductChildren on DetailProductPage {
   Widget buildImageSlider(List<String> imageList) {
     return Container(
       margin: const EdgeInsets.all(8.0),
-      height: 220.0,
+      height: 413.0,
+      width: 275.0,
       child: Image.asset('assets/images/image_01.jpg'),
     );
   }

@@ -41,7 +41,7 @@ extension ProfilePageChildren on ProfilePage {
     );
   }
 
-  Widget buildMenuSettingProfile(ProfileController controller) {
+  Widget buildMenuSettingProfile(ProfileContainerController controller) {
     return Padding(
       padding: const EdgeInsets.only(top: 32.0),
       child: Column(
@@ -66,7 +66,7 @@ extension ProfilePageChildren on ProfilePage {
               Icons.arrow_forward_ios,
               color: Color(0xFF9B9B9B),
             ),
-            onTap: () => controller.onMoveToMyOrderPage(),
+            onTap: () => controller.onItemMenuClicked(),
           ),
           const ListTile(
             title: Text(

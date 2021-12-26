@@ -1,21 +1,37 @@
-import 'package:ecommerce_app_ui/modules/container/controller/container_controller.dart';
+import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
+import 'package:ecommerce_app_ui/modules/container/controller/main_container_controller.dart';
+import 'package:ecommerce_app_ui/modules/favorites/view/favorite_page.dart';
+import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
+import 'package:ecommerce_app_ui/modules/profile/view/profile_container_page.dart';
+import 'package:ecommerce_app_ui/modules/shop/view/shop_container_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class ContainerPage extends StatelessWidget {
-  final int selectIndex;
-  final Widget child;
-  const ContainerPage({Key? key, required this.selectIndex, required this.child}) : super(key: key);
+class MainContainerPage extends StatelessWidget {
+  const MainContainerPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(ContainerController());
+    final controller = Get.put(MainContainerController());
     return Scaffold(
-        backgroundColor: Colors.white,
-        body: child,
-        bottomNavigationBar:  BottomNavigationBar(
-            onTap:(index){
-              controller.onMoveToPage(index);
+      backgroundColor: Colors.white,
+      body: PageView(
+        controller: controller.pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: const [
+          HomePage(),
+          ShopContainerPage(),
+          BagPage(),
+          FavoritePage(),
+          ProfileContainerPage(),
+        ],
+      ),
+      bottomNavigationBar: Obx(
+        () => BottomNavigationBar(
+            onTap: (index) {
+              controller.onItemMenuClicked(index);
             },
             elevation: 0.0,
             backgroundColor: Colors.white,
@@ -70,8 +86,8 @@ class ContainerPage extends StatelessWidget {
               ),
             ],
             type: BottomNavigationBarType.fixed,
-            currentIndex:selectIndex
-          ),
-        );
+            currentIndex: controller.isItemClicked.value),
+      ),
+    );
   }
 }
