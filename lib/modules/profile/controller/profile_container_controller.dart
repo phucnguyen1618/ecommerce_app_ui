@@ -1,4 +1,3 @@
-import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
@@ -6,12 +5,12 @@ class ProfileContainerController extends GetxController {
 
   var pageController = PageController(initialPage: 0);
 
-  onItemMenuClicked() {
+  onMoveToOrderPage() {
     pageController.jumpToPage(1);
   }
 
-  onSettingsClicked() {
-    Get.toNamed(Routes.SETTINGS);
+  onItemMenuClicked(String routeName) {
+    Get.toNamed(routeName);
   }
 
   onItemOrderClicked(){

@@ -1,4 +1,5 @@
 import 'package:ecommerce_app_ui/modules/profile/controller/profile_container_controller.dart';
+import 'package:ecommerce_app_ui/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -41,7 +42,7 @@ class ProfilePage extends GetView<ProfileContainerController> {
               ),
             ),
             buildRowInforPerson(),
-            buildMenuSettingProfile(controller),
+            buildMenuSettingProfile(),
           ],
         ),
       ),

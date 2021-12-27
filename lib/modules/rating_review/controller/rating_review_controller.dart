@@ -4,7 +4,12 @@ import 'package:get/get.dart';
 class RatingReviewController extends GetxController {
 
   onWriteReviewClicked() {
-    Get.bottomSheet(const BottomSheetRatingReview());
+    Get.bottomSheet(
+      const BottomSheetRatingReview(),
+    );
   }
 
+  onBack() {
+    Get.back();
+  }
 }

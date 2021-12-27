@@ -5,9 +5,12 @@ extension RetingReviewPageChildren on RatingReviewPage {
     return AppBar(
       elevation: 0.0,
       backgroundColor: const Color(0xFFF9F9F9),
-      leading: const Icon(
-        Icons.arrow_back_ios,
-        color: Colors.black,
+      leading: GestureDetector(
+        onTap: () => controller.onBack(),
+        child: const Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
+        ),
       ),
       bottom: const PreferredSize(
         preferredSize: Size.fromHeight(60.0),

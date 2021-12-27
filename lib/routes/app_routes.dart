@@ -15,4 +15,7 @@ abstract class Routes {
   static const MY_ORDER = '/my_order';
   static const ORDER_DETAIL = '/order_detail';
   static const RATING_REVIEW = '/rating_review';
+  static const CHECKOUT = '/checkout';
+  static const PAYMENT = '/payment';
+  static const SHIPPING = '/shipping';
 }

@@ -2,6 +2,8 @@ import 'package:ecommerce_app_ui/modules/bag/binding/bag_binding.dart';
 import 'package:ecommerce_app_ui/modules/bag/view/bag_page.dart';
 import 'package:ecommerce_app_ui/modules/brand/binding/brand_binding.dart';
 import 'package:ecommerce_app_ui/modules/brand/view/brand_page.dart';
+import 'package:ecommerce_app_ui/modules/checkout/binding/checkout_binding.dart';
+import 'package:ecommerce_app_ui/modules/checkout/view/checkout_page.dart';
 import 'package:ecommerce_app_ui/modules/container/binding/main_container_binding.dart';
 import 'package:ecommerce_app_ui/modules/container/view/main_container_page.dart';
 import 'package:ecommerce_app_ui/modules/detail/binding/detail_binding.dart';
@@ -15,12 +17,14 @@ import 'package:ecommerce_app_ui/modules/home/binding/home_binding.dart';
 import 'package:ecommerce_app_ui/modules/login/view/login_page.dart';
 import 'package:ecommerce_app_ui/modules/home/view/home_page.dart';
 import 'package:ecommerce_app_ui/modules/order/view/my_order_page.dart';
+import 'package:ecommerce_app_ui/modules/payment/view/payment_method_page.dart';
 import 'package:ecommerce_app_ui/modules/profile/binding/profile_container_binding.dart';
 import 'package:ecommerce_app_ui/modules/profile/view/profile_container_page.dart';
 import 'package:ecommerce_app_ui/modules/rating_review/binding/rating_review_binding.dart';
 import 'package:ecommerce_app_ui/modules/rating_review/view/rating_review_page.dart';
 import 'package:ecommerce_app_ui/modules/settings/binding/settings_binding.dart';
 import 'package:ecommerce_app_ui/modules/settings/view/settings_page.dart';
+import 'package:ecommerce_app_ui/modules/shipping/view/shipping_address_page.dart';
 import 'package:ecommerce_app_ui/modules/shop/binding/shop_binding.dart';
 import 'package:ecommerce_app_ui/modules/shop/view/shop_container_page.dart';
 import 'package:ecommerce_app_ui/modules/signup/view/signup_page.dart';
@@ -92,5 +96,18 @@ final routePages = [
     name: Routes.RATING_REVIEW,
     page: () => const RatingReviewPage(),
     binding: RatingReviewBinding(),
+  ),
+  GetPage(
+    name: Routes.CHECKOUT,
+    page: () => const CheckOutPage(),
+    binding: CheckOutBinding(),
+  ),
+  GetPage(
+    name: Routes.PAYMENT,
+    page: () => const PaymentMethodPage(),
+  ),
+  GetPage(
+    name: Routes.SHIPPING,
+    page: () => const ShippingAddressPage(),
   ),
 ];

@@ -75,9 +75,7 @@ extension BagPageChildren on BagPage {
             ),
             CustomButtonWidget(
               content: 'CHECK OUT',
-              callback: () {
-                log('Clicked');
-              },
+              callback: () => controller.onMoveToCheckOut(),
             ),
           ],
         ));

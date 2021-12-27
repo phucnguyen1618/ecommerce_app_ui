@@ -41,7 +41,7 @@ extension ProfilePageChildren on ProfilePage {
     );
   }
 
-  Widget buildMenuSettingProfile(ProfileContainerController controller) {
+  Widget buildMenuSettingProfile() {
     return Padding(
       padding: const EdgeInsets.only(top: 32.0),
       child: Column(
@@ -66,10 +66,10 @@ extension ProfilePageChildren on ProfilePage {
               Icons.arrow_forward_ios,
               color: Color(0xFF9B9B9B),
             ),
-            onTap: () => controller.onItemMenuClicked(),
+            onTap: () => controller.onMoveToOrderPage(),
           ),
-          const ListTile(
-            title: Text(
+          ListTile(
+            title: const Text(
               'Shipping addresses',
               style: TextStyle(
                 color: Colors.black,
@@ -77,20 +77,21 @@ extension ProfilePageChildren on ProfilePage {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               '3 addresses',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(
+            trailing: const Icon(
               Icons.arrow_forward_ios,
               color: Color(0xFF9B9B9B),
             ),
+            onTap: () => controller.onItemMenuClicked(Routes.SHIPPING),
           ),
-          const ListTile(
-            title: Text(
+          ListTile(
+            title: const Text(
               'Payment methods',
               style: TextStyle(
                 color: Colors.black,
@@ -98,17 +99,18 @@ extension ProfilePageChildren on ProfilePage {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            subtitle: Text(
+            subtitle: const Text(
               'Via ***88',
               style: TextStyle(
                 color: Colors.grey,
                 fontSize: 14.0,
               ),
             ),
-            trailing: Icon(
+            trailing: const Icon(
               Icons.arrow_forward_ios,
               color: Color(0xFF9B9B9B),
             ),
+            onTap: () => controller.onItemMenuClicked(Routes.PAYMENT),
           ),
           const ListTile(
             title: Text(
@@ -172,7 +174,7 @@ extension ProfilePageChildren on ProfilePage {
               Icons.arrow_forward_ios,
               color: Color(0xFF9B9B9B),
             ),
-            onTap: () => controller.onSettingsClicked(),
+            onTap: () => controller.onItemMenuClicked(Routes.SETTINGS),
           ),
         ],
       ),
